@@ -5,7 +5,7 @@ public class Main {
         menu();
     }
     public static void menu(){
-        int dados2, dados3, IndiceDeMasa, opcion;
+        int opcion;
         Scanner leer = new Scanner(System.in);
         do {
             System.out.println("--------------Elige una de las opciones-------------");
