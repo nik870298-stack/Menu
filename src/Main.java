@@ -13,7 +13,9 @@ public class Main {
             System.out.println("2. Tres Dados");
             System.out.println("3. Indice de Masa");
             System.out.println("4. Promedio de notas del estudiante");
-            System.out.println("5. Salir del Menu");
+            System.out.println("5.");
+            System.out.println("6.");
+            System.out.println("7.Salir del Menu");
             System.out.println("Ingrese una opcion:");
             opcion = leer.nextInt();
             switch (opcion) {
@@ -29,7 +31,7 @@ public class Main {
                 case 4:
                     promedioNotas();
                     break;
-                case 5:
+                case 7:
                     System.exit(0);
                     break;
             }
