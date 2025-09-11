@@ -13,10 +13,11 @@ public class Main {
             System.out.println("2. Tres Dados");
             System.out.println("3. Indice de Masa");
             System.out.println("4. Promedio de notas del estudiante");
-            System.out.println("5.");
-            System.out.println("6.");
-            System.out.println("7.Salir del Menu");
+            System.out.println("5.Carrera entre dos corredores");
+            System.out.println("6.Salir del Menu");
             System.out.println("Ingrese una opcion:");
+
+
             opcion = leer.nextInt();
             switch (opcion) {
                 case 1:
@@ -31,7 +32,10 @@ public class Main {
                 case 4:
                     promedioNotas();
                     break;
-                case 7:
+                case 5:
+                    carreraDosCorredores();
+                    break;
+                case 6:
                     System.exit(0);
                     break;
             }
@@ -98,7 +102,7 @@ public class Main {
             System.out.println("Hubo un empate entre el dado tres y uno, el segundo dado saco:" + sumaD2);
         }
     }
-    public static String IndiceDeMasa(){
+    public static void IndiceDeMasa(){
         Scanner teclado = new Scanner(System.in);
         double Peso;
         System.out.println("Digite su peso:");
@@ -107,7 +111,7 @@ public class Main {
         System.out.println("Digite su estatura:");
         Estatura = teclado.nextDouble();
         double IMC = (Peso/Math.pow(Estatura, 2));
-        System.out.println("IMC" +IMC);
+        System.out.println("IMC=" +IMC);
         if (IMC<18.5){
             System.out.println("Su péso es bajo");
         } else if (IMC>=18.5 && IMC<=24.9){
@@ -125,7 +129,6 @@ public class Main {
         }else if (IMC>50){
             System.out.println("Tiene obesidad de tipo cuatro (Extrema)");
         }
-        return "Su IMC es ";
     }
     public static void promedioNotas(){
         Scanner n = new Scanner(System.in);
@@ -144,6 +147,32 @@ public class Main {
             System.out.println("Estado: Aprobado ");
         } else {
             System.out.println("Estado: Reprobado ");
+        }
+    }
+    public static void carreraDosCorredores(){
+        int corredor1 = 0, pasos1 , pasos2 , corredor2 = 0;
+        do {
+            Random Pasos = new Random();
+            pasos1 = Pasos.nextInt((6 - 1) + 1) + 1;
+            pasos2 = Pasos.nextInt((6 - 1) + 1) + 1;
+            if(pasos1 == 6){
+               corredor1 = pasos1 - 2;
+            }
+            if(pasos2 == 6){
+                corredor2 = pasos2 - 2;
+            }
+            corredor1 +=pasos1;
+            System.out.println("El primer corredor avanza="+pasos1);
+            System.out.println("El total de pasos del corredor uno va en="+corredor1);
+            corredor2 += pasos2;
+            System.out.println("El primer corredor avanza="+pasos2);
+            System.out.println("El total de pasos del corredor dos va en="+corredor2);
+
+        }while(corredor1 <= 50 && corredor2<=50);
+        if(corredor1 >corredor2 ){
+            System.out.println("Gana el corredor uno con un total de pasos:"+corredor1);
+        }else if(corredor2>corredor1){
+            System.out.println("Gana el corredor dos con un total de pasos"+corredor2);
         }
     }
 }
